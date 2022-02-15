@@ -1,0 +1,44 @@
+<h1>Colleges list</h1>
+<div>
+<%= form_with url: colleges_path, method: 'get' do |f| %>
+Search:
+<%= f.text_field :q, value: params[:q],placeholder:'Search college' %>
+<%= f.submit "search" %>
+<% end %>
+</div>
+<br>
+<table>
+<thead>
+
+
+
+
+<th>Name</th>
+<th>Area</th>
+<th>Code</th>
+</thead>
+<% @colleges.each do |college| %>
+<tr>
+<td><%= college.name %> </td>
+
+
+
+
+<td><%= college.area %></td>
+<td><%= college.code %></td>
+<td>
+
+
+
+<%= link_to "show", college_path(college) %>
+<%= link_to "Edit", edit_college_path(college) %>
+<%= link_to "delete", college_path(college), method: :delete, data: { confirm: "are u sure"} %>
+<%= link_to "download pdf", download_pdf_college_path(college) %>
+
+
+
+</td>
+</tr>
+<% end %>
+</table>
+<%= link_to "Add New college",new_college_path %>

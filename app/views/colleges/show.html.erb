@@ -1,0 +1,14 @@
+<table>
+<strong>Name:</strong>
+<%= @college.name %>
+</p>
+<p>
+<strong>Area:</strong>
+<%= @college.area %>
+</p>
+<strong>Code:</strong>
+<%= @college.code %>
+</p>
+<%= image_tag @college.main_image, width: '500' if @college.main_image.present? %>
+<%= link_to 'Back', :back %>
+</table>

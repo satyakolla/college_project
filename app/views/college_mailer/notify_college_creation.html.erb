@@ -1,0 +1,12 @@
+<h1>Hi</h1>
+<p>
+there is a new college created <br>
+</p>
+<p>
+Name: <%= @college.name %><br>
+Area: <%= @college.area %><br>
+Code: <%= @college.code %><br>
+CreatedAt: <%= @college.created_at %> <br>
+To view the full college details: <%= link_to "click here" , college_url(@college) %>
+</p>
+<p> have a great day </p> 
