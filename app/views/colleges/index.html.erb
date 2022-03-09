@@ -42,3 +42,13 @@ Search:
 <% end %>
 </table>
 <%= link_to "Add New college",new_college_path %>
+
+
+<%= nav_bar fixed: :top, brand: "Ninety Ten" do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", root_path %>
+        <%= menu_item "About Us", colleges_aboutus_path %>
+        <%= menu_item "Contact", colleges_contact_path %>
+        <%= menu_item "college information", colleges_path %>
+    <% end %>
+<% end %>

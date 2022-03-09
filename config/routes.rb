@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
- 
+
+ get 'colleges/aboutus'
+ get 'colleges/contact'
+ get 'colleges/home'
+
   
   resources :teachers
   #devise_for :users
-  root to: "colleges#index"
+  root to: "colleges#home"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :colleges do

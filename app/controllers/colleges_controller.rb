@@ -26,6 +26,9 @@ class CollegesController < ApplicationController
         def edit
         
         end
+        def aboutus
+
+        end
         def update
         
         if @college.update(college_params)
