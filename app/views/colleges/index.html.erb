@@ -1,8 +1,8 @@
-<h1>Colleges list</h1>
+<h1>Teachers list</h1>
 <div>
 <%= form_with url: colleges_path, method: 'get' do |f| %>
 Search:
-<%= f.text_field :q, value: params[:q],placeholder:'Search college' %>
+<%= f.text_field :q, value: params[:q],placeholder:'Search by Teacher name' %>
 <%= f.submit "search" %>
 <% end %>
 </div>
@@ -44,7 +44,7 @@ Search:
 <%= link_to "Add New college",new_college_path %>
 
 
-<%= nav_bar fixed: :top, brand: "Ninety Ten" do %>
+<%= nav_bar fixed: :top, brand: "VIGNAN" do %>
     <%= menu_group do %>
         <%= menu_item "Home", root_path %>
         <%= menu_item "About Us", colleges_aboutus_path %>
