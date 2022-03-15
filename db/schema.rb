@@ -1,4 +1,5 @@
-devise_for :users, controllers: {registrations: 'users/registrations'}# of editing this file, please use the migrations feature of Active Record to
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # This file is the source Rails uses to define your schema when running `bin/rails
@@ -9,7 +10,7 @@ devise_for :users, controllers: {registrations: 'users/registrations'}# of editi
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_102200) do
+ActiveRecord::Schema.define(version: 2022_03_14_094143) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -56,20 +57,6 @@ ActiveRecord::Schema.define(version: 2022_02_03_102200) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "staffs", force: :cascade do |t|
-    t.string "name"
-    t.string "class"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "class"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.string "section"
@@ -80,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_02_03_102200) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -94,6 +82,8 @@ ActiveRecord::Schema.define(version: 2022_02_03_102200) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

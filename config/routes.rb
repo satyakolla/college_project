@@ -22,5 +22,8 @@ Rails.application.routes.draw do
     resources :teachers
       end
     end
-    devise_for :users, controllers: {registrations: 'users/registrations'}
+    
+devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
+
+
 end
